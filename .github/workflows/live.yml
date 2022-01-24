@@ -11,8 +11,8 @@ jobs:
       run: |
         sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
         sudo chmod a+rx /usr/local/bin/youtube-dl
-        - name: Get 00.m3u8
-        run: |
+    - name: Get 00.m3u8
+      run: |
         touch ./00.m3u8
         sudo cat >./00.m3u8 <<EOL
         #EXTM3U
@@ -20,8 +20,8 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
         $(youtube-dl -g https://www.youtube.com/watch?v=wKjPli-AHdA)
         EOL
-            - name: Get 01.m3u8
-        run: |
+    - name: Get 01.m3u8
+      run: |
         touch ./01.m3u8
         sudo cat >./01.m3u8 <<EOL
         #EXTM3U
@@ -36,7 +36,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
-        $(youtube-dl --proxy https://125.228.213.64:8080 -g https://www.youtube.com/watch?v=oV_i3Hsl_zg)
+        $(youtube-dl -g https://www.youtube.com/watch?v=oV_i3Hsl_zg)
         EOL
     - name: Get 13.m3u8
       run: |
@@ -45,7 +45,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
-        $(youtube-dl --proxy https://125.228.213.64:8080 -g https://www.youtube.com/watch?v=JAzRXylm3M0)
+        $(youtube-dl -g https://www.youtube.com/watch?v=JAzRXylm3M0)
         EOL
     - name: Get 14.m3u8
       run: |
@@ -54,7 +54,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
-        $(youtube-dl --proxy https://125.228.213.64:8080 -g https://www.youtube.com/watch?v=cnYQ_z7QfxE)
+        $(youtube-dl -g https://www.youtube.com/watch?v=cnYQ_z7QfxE)
         EOL
     - name: Get 34.m3u8
       run: |
