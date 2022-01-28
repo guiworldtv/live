@@ -157,7 +157,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(youtube-dl -f best -g https://www.youtube.com/watch?v=hP6_jfCFxyQ)
+        $(youtube-dl -f best --hls-prefer-native --hls-use-mpegts --fixup warn -g https://www.youtube.com/watch?v=hP6_jfCFxyQ)
         EOL
     - name: Get 57.m3u8
       run: |
